@@ -5,6 +5,7 @@ scalaVersion := "2.13.4"
 libraryDependencies ++= {
   Seq(
     "org.reactivemongo" %% "reactivemongo" % "1.0.3" % Test,
+    "com.typesafe.akka" %% "akka-slf4j" % "2.6.12" % Test,
     "ch.qos.logback" % "logback-classic" % "1.2.3" % Test,
     "org.scalatest" %% "scalatest" % "3.2.3" % Test
   )
