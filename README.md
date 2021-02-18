@@ -14,3 +14,4 @@ Service
 Test
 ----
 1. sbt clean test
+2. target/test.log
