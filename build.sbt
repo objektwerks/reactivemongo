@@ -10,6 +10,7 @@ libraryDependencies ++= {
     "org.reactivemongo" %% "reactivemongo-core" % reactivemongoVersion % Test,
     "org.reactivemongo" %% "reactivemongo-bson-api" % reactivemongoVersion % Test,
     "org.reactivemongo" %% "reactivemongo-akkastream" % reactivemongoVersion % Test,
+    "org.reactivemongo" % "reactivemongo-shaded" % reactivemongoVersion % Test,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion % Test,
     "com.typesafe.akka" %% "akka-protobuf" % akkaVersion % Test,
     "com.typesafe.akka" %% "akka-slf4j" % akkaVersion % Test,

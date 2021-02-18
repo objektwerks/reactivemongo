@@ -1,10 +1,11 @@
 package objektwerks
 
+import reactivemongo.api.bson.collection.BSONCollection
 import reactivemongo.api.bson.{BSONDocumentReader, BSONDocumentWriter, Macros}
 import reactivemongo.api.{AsyncDriver, MongoConnection}
 
-import scala.concurrent.{Await, ExecutionContext}
 import scala.concurrent.duration._
+import scala.concurrent.{Await, ExecutionContext}
 import scala.language.postfixOps
 
 final case class Todo(category: String, todo: String) extends Product with Serializable
@@ -26,7 +27,7 @@ object Mongodb {
   } yield database
 
   val db = Await.result(futureDB, 9 seconds)
-  val todos = db.collection("todos")
+  val todos: BSONCollection = db.collection("todos")
 
   sys.addShutdownHook {
     db.drop()
