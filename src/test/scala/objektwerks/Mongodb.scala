@@ -9,23 +9,24 @@ import scala.language.postfixOps
 
 final case class Todo(category: String, todo: String) extends Product with Serializable
 
+object Todo {
+  implicit def todoWriter: BSONDocumentWriter[Todo] = Macros.writer[Todo]
+  implicit def todoReader: BSONDocumentReader[Todo] = Macros.reader[Todo]
+}
+
 object Mongodb {
   implicit val ec = ExecutionContext.Implicits.global
 
   val driver = AsyncDriver()
 
   val futureDB = for {
-    uri <- MongoConnection.fromString("mongodb://127.0.0.1:27017/reactivemongo")
+    uri <- MongoConnection.fromString("mongodb://127.0.0.1:27017/mongodb")
     connection <- driver.connect(uri)
-    database <- connection.database("reactivemongo")
+    database <- connection.database("mongodb")
   } yield database
 
-  val db = Await.result(futureDB, 3 seconds)
+  val db = Await.result(futureDB, 9 seconds)
   val todos = db.collection("todos")
-
-  implicit def todoWriter: BSONDocumentWriter[Todo] = Macros.writer[Todo]
-
-  implicit def todoReader: BSONDocumentReader[Todo] = Macros.reader[Todo]
 
   sys.addShutdownHook {
     db.drop()
