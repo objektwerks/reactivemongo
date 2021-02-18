@@ -12,7 +12,8 @@ import scala.language.postfixOps
 
 class ReactiveMongoTest extends AnyFunSuite with Matchers {
   import Mongodb._
-
+  import Todo._
+  
   val todo = Todo("Beer", "Drink IPA!")
 
   test("write") {
