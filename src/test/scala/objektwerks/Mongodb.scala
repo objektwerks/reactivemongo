@@ -21,7 +21,7 @@ object Mongodb {
   val driver = AsyncDriver()
 
   val futureDB = for {
-    uri <- MongoConnection.fromString("mongodb://127.0.0.1:27017/mongodb")
+    uri <- MongoConnection.fromString("mongodb://localhost:27017/mongodb")
     connection <- driver.connect(uri)
     database <- connection.database("mongodb")
   } yield database
