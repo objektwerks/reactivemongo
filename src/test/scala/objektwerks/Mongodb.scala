@@ -26,7 +26,7 @@ object Mongodb {
     database <- connection.database("mongodb")
   } yield database
 
-  val db = Await.result(futureDB, 9 seconds)
+  val db = Await.result(futureDB, 6 seconds)
   val todos: BSONCollection = db.collection("todos")
 
   sys.addShutdownHook {
