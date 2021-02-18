@@ -1,13 +1,11 @@
 package objektwerks
 
-import reactivemongo.api.{AsyncDriver, MongoConnection}
 import reactivemongo.api.bson.{BSONDocumentReader, BSONDocumentWriter, Macros}
+import reactivemongo.api.{AsyncDriver, MongoConnection}
 
-
-import scala.concurrent.Await
+import scala.concurrent.{Await, ExecutionContext}
 import scala.concurrent.duration._
 import scala.language.postfixOps
-import scala.concurrent.ExecutionContext
 
 final case class Todo(category: String, todo: String) extends Product with Serializable
 

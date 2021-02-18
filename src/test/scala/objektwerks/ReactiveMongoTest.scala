@@ -6,9 +6,9 @@ import org.scalatest.matchers.should.Matchers
 import reactivemongo.api.ReadPreference
 import reactivemongo.api.bson.document
 
+import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.language.postfixOps
-import scala.concurrent.Await
 
 class ReactiveMongoTest extends AnyFunSuite with Matchers {
   import Mongodb._
