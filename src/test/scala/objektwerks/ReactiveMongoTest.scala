@@ -16,12 +16,15 @@ class ReactiveMongoTest extends AnyFunSuite with Matchers {
   val todo = Todo("Beer", "Drink IPA!")
 
   test("write") {
-    todos.insert.one(todo).map(_ => {})
+    val future = todos.insert.one(todo)
+    val result = Await.result(future, 3 seconds)
+    result.writeErrors.isEmpty shouldBe true
   }
 
   test("read") {
     val query = document("category" -> "Beer")
-    val result = todos.find(query).cursor[Todo](ReadPreference.nearest).head
-    Await.result(result, 3 seconds) shouldBe todo
+    val future = todos.find(query).cursor[Todo](ReadPreference.nearest).head
+    val result = Await.result(future, 3 seconds)
+    result shouldBe todo
   }
 }
