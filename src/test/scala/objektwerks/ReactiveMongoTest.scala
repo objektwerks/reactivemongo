@@ -11,8 +11,8 @@ import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-class ReactiveMongoTest extends AnyFunSuite with Matchers with Mongodb {
-  import Todo._
+class ReactiveMongoTest extends AnyFunSuite with Matchers with ReactiveMongo {
+  import TodoReactiveMongoSupport._
 
   val todos: BSONCollection = db.collection("todos")
   val todo = Todo("Beer", "Drink IPA!")

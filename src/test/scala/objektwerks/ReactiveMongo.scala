@@ -6,7 +6,7 @@ import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContext}
 import scala.language.postfixOps
 
-trait Mongodb {
+trait ReactiveMongo {
   implicit val ec = ExecutionContext.Implicits.global
 
   val driver = AsyncDriver()
