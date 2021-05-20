@@ -1,7 +1,7 @@
 name := "reactivemongo"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.13.5"
+scalaVersion := "2.13.6"
 libraryDependencies ++= {
   val reactivemongoVersion = "1.0.3"
   val akkaVersion = "2.6.12"
