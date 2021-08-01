@@ -3,7 +3,7 @@ organization := "objektwerks"
 version := "0.1-SNAPSHOT"
 scalaVersion := "2.13.6"
 libraryDependencies ++= {
-  val reactivemongoVersion = "1.0.3"
+  val reactivemongoVersion = "1.0.6"
   val akkaVersion = "2.6.15"
   Seq(
     "org.reactivemongo" %% "reactivemongo" % reactivemongoVersion % Test,
