@@ -4,7 +4,7 @@ version := "0.1-SNAPSHOT"
 scalaVersion := "2.13.8"
 libraryDependencies ++= {
   val reactivemongoVersion = "1.0.8"
-  val akkaVersion = "2.6.18"
+  val akkaVersion = "2.6.19"
   Seq(
     "org.reactivemongo" %% "reactivemongo" % reactivemongoVersion % Test,
     "org.reactivemongo" %% "reactivemongo-core" % reactivemongoVersion % Test,
