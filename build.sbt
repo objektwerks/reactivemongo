@@ -14,7 +14,7 @@ libraryDependencies ++= {
     "com.typesafe.akka" %% "akka-stream" % akkaVersion % Test,
     "com.typesafe.akka" %% "akka-protobuf" % akkaVersion % Test,
     "com.typesafe.akka" %% "akka-slf4j" % akkaVersion % Test,
-    "io.netty" % "netty-all" % "4.1.76.Final" % Test,
+    "io.netty" % "netty-all" % "4.1.90.Final" % Test,
     "ch.qos.logback" % "logback-classic" % "1.4.6" % Test,
     "org.scalatest" %% "scalatest" % "3.2.15" % Test
   )
