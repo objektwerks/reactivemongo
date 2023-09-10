@@ -1,7 +1,7 @@
 name := "reactivemongo"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.13.11"
+scalaVersion := "2.13.12"
 libraryDependencies ++= {
   val reactivemongoVersion = "1.0.10"
   val akkaVersion = "2.6.20" // Don't upgrade due to BUSL 1.1!
